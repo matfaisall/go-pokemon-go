@@ -26,8 +26,8 @@ const Header = () => {
             <Image
               src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
               alt="Go Pokemon Go Logo"
-              width={20}
-              height={20}
+              width={30}
+              height={30}
               className="object-cover"
             />
             <span className="hidden sm:inline">Go Pokemon Go</span>

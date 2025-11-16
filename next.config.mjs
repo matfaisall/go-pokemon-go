@@ -4,9 +4,18 @@ const nextConfig = {
   reactCompiler: true,
   images: {
     remotePatterns: [
-      new URL(
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
-      ),
+      {
+        protocol: "https",
+        hostname: "raw.githubusercontent.com",
+        port: "",
+        pathname: "/PokeAPI/sprites/master/sprites/items/poke-ball.png",
+      },
+      {
+        protocol: "https",
+        hostname: "raw.githubusercontent.com",
+        port: "",
+        pathname: "/PokeAPI/sprites/master/sprites/pokemon/**",
+      },
     ],
   },
 };
