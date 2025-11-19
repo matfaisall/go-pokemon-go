@@ -58,18 +58,40 @@ export const PokemonList = () => {
   // console.log("allPokemon", allPokemon);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-      {allPokemon.map((pokemon) => {
-        return (
-          <PokemonCardWrapper
-            key={pokemon?.name}
-            pokemonUrl={pokemon?.url}
-            // isFavorite={}
-            onNavigate={() => router.push(`/pokemon/${pokemon?.name}`)}
-          />
-        );
-      })}
-    </div>
+    <>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {allPokemon.map((pokemon) => {
+          return (
+            <PokemonCardWrapper
+              key={pokemon?.name}
+              pokemonUrl={pokemon?.url}
+              // isFavorite={}
+              onNavigate={() => router.push(`/pokemon/${pokemon?.name}`)}
+            />
+          );
+        })}
+      </div>
+
+      {/* infinite scroll trigger */}
+      <div
+        ref={observerTarget}
+        className="h-20 flex items-center justify-center"
+      >
+        {isFetchingNextPage && (
+          <div className="flex gap-4">
+            {Array.from({ length: 4 }).map((_, index) => (
+              <Skeleton key={index} className="h-96 w-72" />
+            ))}
+          </div>
+        )}
+      </div>
+
+      {!hasNextPage && (
+        <div className="text-center py-8 text-muted-foreground">
+          <p>You`ve reached the end!</p>
+        </div>
+      )}
+    </>
   );
 };
 
