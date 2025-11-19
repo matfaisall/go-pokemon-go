@@ -13,4 +13,10 @@ export const pokemonApi = {
     const response = await axiosInstance.get(`/pokemon/${idOrName}`);
     return response.data;
   },
+
+  // get pokemon species by id
+  getPokemonSpecies: async (idOrName) => {
+    const response = await axiosInstance.get(`/pokemon-species/${idOrName}`);
+    return response.data;
+  },
 };

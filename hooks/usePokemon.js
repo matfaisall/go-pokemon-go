@@ -25,3 +25,13 @@ export const usePokemon = (idOrName, enabled) => {
     staleTime: 1000 * 60 * 5, // 5 menit
   });
 };
+
+// get pokemon specier by id
+export const usePokemonSpecies = (idOrName, enabled) => {
+  return useQuery({
+    queryKey: ["pokemon", "species", idOrName],
+    queryFn: async () => pokemonApi.getPokemonSpecies(idOrName),
+    enabled: enabled && !!idOrName,
+    staleTime: 1000 * 60 * 5, // 5 menit
+  });
+};

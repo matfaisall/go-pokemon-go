@@ -101,7 +101,7 @@ export const PokemonCardWrapper = ({
   onNavigate,
 }) => {
   const pokemonId = pokemonUrl.split("/").slice(-2, -1)[0];
-  console.log("pokemonId", pokemonId);
+  // console.log("pokemonId", pokemonId);
 
   const { data: pokemon, isLoading } = usePokemon(pokemonId, true);
 

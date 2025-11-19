@@ -14,7 +14,7 @@ const Header = () => {
     e.preventDefault();
     if (search.trim()) {
       console.log("fitur masih belum ada");
-      // router.push(`/pokemon/${search.trim().toLowerCase()}`);
+      router.push(`/pokemon/${search.trim().toLowerCase()}`);
       setSearch("");
     }
   };
